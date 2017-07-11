@@ -6,10 +6,12 @@ const cookieParser = require('cookie-parser');
 const bodyParser = require('body-parser');
 const cors = require('cors')
 
-const authors = require('./routes/authors');
-const books = require('./routes/books');
-
 const app = express();
+
+const authors = require('./routes/author');
+const books = require('./routes/book');
+
+
 
 
 // uncomment after placing your favicon in /public
