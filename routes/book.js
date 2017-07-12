@@ -10,4 +10,10 @@ router.get('/', (req, res) => {
   })
 })
 
+router.get('/:id', (req, res) => {
+  queries.getOneBook(req.params.id).then(book => {
+    res.json(book)
+  })
+})
+
 module.exports = router;
