@@ -14,5 +14,8 @@ module.exports = {
   },
   createBook: function(book){
     return knex('book').insert(book).returning('*');
+  },
+  deleteBook: function(id){
+    return knex('book').where('id', id).del();
   }
 }

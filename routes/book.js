@@ -35,7 +35,15 @@ router.post('/', function(req, res, next) {
     res.status(400)
     next(new Error('invalid book'))
   }
+})
 
+router.delete('/:id', (req, res)=>{
+  queries.deleteBook(req.params.id)
+  .then(()=>{
+    res.json({
+      deleted: true
+    })
+  })
 })
 
 module.exports = router;
