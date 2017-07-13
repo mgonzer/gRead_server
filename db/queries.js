@@ -11,5 +11,8 @@ module.exports = {
   },
   getOneBook: function(id) {
     return knex('book').where('id', id).first();
+  },
+  createBook: function(book){
+    return knex('book').insert(book).returning('*');
   }
 }
