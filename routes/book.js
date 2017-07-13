@@ -46,4 +46,11 @@ router.delete('/:id', (req, res)=>{
   })
 })
 
+router.put('/:id', (req, res)=>{
+  queries.editBook(req.params.id, req.body)
+  .then(book=>{
+    res.json(book[0])
+  })
+})
+
 module.exports = router;
